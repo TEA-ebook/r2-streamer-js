@@ -1,5 +1,5 @@
 {
-  "name": "r2-streamer-js",
+  "name": "@vivlio/r2-streamer-js",
   "version": "1.0.31",
   "description": "Readium 2 'streamer' for NodeJS (TypeScript)",
   "keywords": [
@@ -59,7 +59,7 @@
     "morgan": "^1.10.0",
     "r2-lcp-js": "^1.0.29",
     "r2-opds-js": "^1.0.27",
-    "r2-shared-js": "^1.0.39",
+    "@vivlio/r2-shared-js": "^1.0.39",
     "r2-utils-js": "^1.0.23",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
@@ -116,7 +116,7 @@
     "quick-build-dist": "npm run transpile:typescript:es8-es2017+afterdist && npm run copydist",
     "_pregitdist": "npm run build:all",
     "gitdist": "cd ../r2-streamer-js-dist/ && git checkout -B develop && (git pull || echo \"pull\") && (git --no-pager status || echo status) && ((rimraf \"*\" && echo rimrafOK) || echo rimrafNOK) && cpy ../r2-streamer-js/package.json . && cpy ../r2-streamer-js/package-lock.json . && cpy ../r2-streamer-js/LICENSE . && cpy ../r2-streamer-js/README.md . && cpy \"./docs/**/*\" ../r2-streamer-js-dist/ --cwd=../r2-streamer-js/ --parents --no-dir && cpy \"./dist/**/*\" ../r2-streamer-js-dist/ --cwd=../r2-streamer-js/ --parents --no-dir && (git add * || echo add) && (git commit -a -m \"add new dist\" || echo commit) && (git push --set-upstream origin develop || echo push) && (git --no-pager status || echo status) && cd ../r2-streamer-js",
-    "start": "cross-env DEBUG=r2:* node \"./dist/es6-es2015/src/http/server-cli.js\" ./misc/epubs/",
+    "start": "cross-env DEBUG=r2:* node --inspect \"./dist/es6-es2015/src/http/server-cli.js\" ./misc/epubs/",
     "prepare_": "npm run build:all",
     "prepublish_": "npm run prepare_",
     "typescript:imports": "node tools/typescript_relativize_path_mapping_imports.js",
@@ -148,7 +148,7 @@
     "server-bundlemin": "node \"./dist/bundle-es8-es2017/server-cli.min.js\"",
     "server-bundlemin-debug": "cross-env DEBUG=r2:* npm run server-bundlemin",
     "server-bundlemin-debug-x": "cross-env DEBUG=* npm run server-bundlemin",
-    "server": "node --version && node \"./dist/es8-es2017/src/http/server-cli.js\"",
+    "server": "node --version && node --inspect \"./dist/es8-es2017/src/http/server-cli.js\"",
     "server-debug": "cross-env DEBUG=r2:* npm run server",
     "server-debug-x": "cross-env DEBUG=* npm run server",
     "server-https-debug": "cross-env DEBUG=r2:* PORT=443 npm run server",
