@@ -21,7 +21,7 @@
         "node_modules/r2-utils-js/dist/es8-es2017/src/*"
       ],
       "@r2-shared-js/*": [
-        "node_modules/r2-shared-js/dist/es8-es2017/src/*"
+        "node_modules/@vivlio/r2-shared-js/dist/es8-es2017/src/*"
       ],
       "@r2-lcp-js/*": [
         "node_modules/r2-lcp-js/dist/es8-es2017/src/*"
