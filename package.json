@@ -1,6 +1,6 @@
 {
   "name": "@vivlio/r2-streamer-js",
-  "version": "1.0.31",
+  "version": "1.0.31-vivlio.1",
   "description": "Readium 2 'streamer' for NodeJS (TypeScript)",
   "keywords": [
     "readium",
